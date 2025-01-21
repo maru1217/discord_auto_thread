@@ -45,9 +45,7 @@ async def on_message(message):
             thread = await message.create_thread(
                 name=thread_name,
                 auto_archive_duration=4320  # 3日間
-            )
-            await thread.send("返信はこちらへ！")
-            
+            )            
 
         # スレッド内のメッセージを無視
         elif isinstance(message.channel, discord.Thread):
