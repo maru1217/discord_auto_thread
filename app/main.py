@@ -20,7 +20,7 @@ intents.guilds = True  # サーバー情報へのアクセスを有効化
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # 動作を許可するチャンネルのIDリスト（特定のチャンネルIDをここに追加）
-ALLOWED_CHANNELS = [1260831426669051934]
+ALLOWED_CHANNELS = [1260831426669051934,1260824835215589396]
 
 @bot.event
 async def on_ready():
