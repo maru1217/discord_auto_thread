@@ -36,6 +36,10 @@ async def on_message(message):
     if message.channel.id in ALLOWED_CHANNELS:
         # メッセージが通常のテキストチャンネルの場合
         if isinstance(message.channel, discord.TextChannel):
+        # メッセージが返信かどうかを判定
+            if message.reference:
+                print(f"返信メッセージが検出されました: {message.content}")
+                return  # 返信の場合は何もしない
             # スレッドを作成
             thread_name = f"{message.author.display_name}'s thread"
             thread = await message.create_thread(
