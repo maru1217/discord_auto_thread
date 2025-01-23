@@ -51,7 +51,7 @@ async def on_message(message):
             thread_name = f"{message.author.display_name}'s thread"
             thread = await message.create_thread(
                 name=thread_name,
-                auto_archive_duration=4320  # 3日間
+                auto_archive_duration=1440  # 3日間
             )            
 
         # スレッド内のメッセージを無視
