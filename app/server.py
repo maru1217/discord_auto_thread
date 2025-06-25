@@ -1,17 +1,17 @@
 from threading import Thread
-
 from fastapi import FastAPI
+from fastapi.responses import PlainTextResponse
 import uvicorn
 
 app = FastAPI()
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 async def root():
-	return {"message": "Server is Online."}
+    return PlainTextResponse("Server is Online.")
 
 def start():
-	uvicorn.run(app, host="0.0.0.0", port=8080)
+    uvicorn.run(app, host="0.0.0.0", port=8080)
 
 def server_thread():
-	t = Thread(target=start)
-	t.start()
+    t = Thread(target=start)
+    t.start()
